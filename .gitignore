@@ -195,3 +195,7 @@ cython_debug/
 
 # VS Code settings
 .vscode/
+
+# Pants workspace files
+/.pants.d
+/dist/

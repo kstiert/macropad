@@ -1,0 +1,20 @@
+[GLOBAL]
+pythonpath = ["%(buildroot)s/pants-plugins"]
+pants_version = "2.26.1"
+backend_packages = [
+  "pants.backend.python",
+  "pants.backend.python.lint.black",
+  "pants.backend.python.lint.flake8",
+  "pants.backend.python.lint.isort",
+  "pants.backend.python.typecheck.mypy",
+  "orbx.circup"
+]
+
+[python]
+interpreter_constraints = [">=3.13"]
+
+[flake8]
+config = ".flake8"
+
+[isort]
+config = ["pyproject.toml"]
