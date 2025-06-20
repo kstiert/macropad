@@ -3,9 +3,10 @@ import keypad
 import neopixel
 import rotaryio
 import usb_hid
-from csp.v1.clipstudiopaint import ClipStudioPaint
 from adafruit_hid.keyboard import Keyboard
 from adafruit_simple_text_display import SimpleTextDisplay
+
+from csp.v1.clipstudiopaint import ClipStudioPaint
 from macropad import Macropad
 
 KEY_PINS = (
