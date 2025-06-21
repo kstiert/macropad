@@ -1,6 +1,7 @@
 from adafruit_hid.keycode import Keycode
 
-from macropad import MacroPad
+from handler_base import HandlerBase
+from macropad import Macropad
 
 KEYCODES = (
     (Keycode.P,),
@@ -21,9 +22,9 @@ ROT_UP_KEY = (Keycode.ALT, Keycode.CONTROL, Keycode.MINUS)
 ROT_DOWN_KEY = (Keycode.ALT, Keycode.CONTROL, Keycode.EQUALS)
 
 
-class ClipStudioPaint:
-    def __init__(self, macropad: MacroPad):
-        self.macropad = macropad
+class ClipStudioPaint(HandlerBase):
+    def __init__(self, macropad: Macropad):
+        super().__init__("Clip Studio Paint", macropad)
 
     def handle_key_press(self, key_number: int):
         self.macropad.keyboard.press(*KEYCODES[key_number])
