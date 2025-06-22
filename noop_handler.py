@@ -1,7 +1,8 @@
-from handler_base import HandlerBase
+from common.handler_base import HandlerBase
+
 class NoopHandler(HandlerBase):
-    def __init__(self, macropad):
-        super().__init__("Noop", macropad)
+    def __init__(self):
+        super().__init__("Noop")
     
     def handle_key_press(self, key_number: int):
         # No operation for key press

@@ -1,9 +1,8 @@
-from macropad import Macropad
+from macropad.macropad_hardware import MacropadHardware
 
 class HandlerBase():
-    def __init__(self, name: str, macropad: Macropad):
+    def __init__(self, name: str):
         self._name = name
-        self._macropad = macropad
 
     @property
     def name(self):
@@ -12,6 +11,9 @@ class HandlerBase():
     @property
     def macropad(self):
         return self._macropad
+    
+    def initialize(self, macropad: MacropadHardware):
+        self._macropad = macropad
     
     def handle_key_press(self, key_number: int):
         pass
